@@ -4,7 +4,7 @@ export const metadata = {
   metadataBase: new URL("https://nomadbarka.hu"),
   title: "Bárka – Hajótaxi a Dunakanyarban | Nomád Bár, Nagymaros",
   description:
-    "Bárka hajótaxi a Nomád Bártól: motorcsónakkal Kisoroszi, Visegrád, Zebegény, Dunabogdány és a Dunakanyar legjobb strandjai felé. Távolság szerinti árak, bringát is viszünk.",
+    "Bárka hajótaxi a Dunakanyarban: motorcsónakkal a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk.",
   keywords: [
     "hajótaxi Dunakanyar",
     "vízitaxi Nagymaros",
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: "Bárka – Hajótaxi a Dunakanyarban",
     description:
-      "Motorcsónakkal a Nomád Bártól a Dunakanyar legjobb helyeire. Távolság szerinti árak, bringát is viszünk.",
+      "Motorcsónakkal a Dunakanyar legjobb helyeire. Bringát is viszünk.",
     locale: "hu_HU",
     type: "website",
     siteName: "Bárka",
