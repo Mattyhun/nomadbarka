@@ -81,7 +81,13 @@ a { color: var(--sunset-dark); text-decoration: none; }
 .nav-phone:hover { background: var(--sunset-dark); }
 
 @media (max-width: 760px) {
-    .nav-links a:not(.nav-phone) { display: none; }
+    /* kompakt kétsoros nav: felül logó + telefon, alul a szekciólinkek */
+    .nav-inner { flex-wrap: wrap; padding: 10px 16px; row-gap: 4px; }
+    .nav-links { display: contents; }
+    .nav-logo { order: -2; }
+    .nav-phone { order: -2; font-size: 0.85rem; padding: 7px 14px; }
+    .nav-inner::after { content: ""; width: 100%; order: -1; }
+    .nav-links a:not(.nav-phone) { font-size: 0.9rem; }
 }
 
 .hero {
@@ -206,6 +212,13 @@ a { color: var(--sunset-dark); text-decoration: none; }
 }
 
 section { padding: 70px 0; }
+
+/* a sticky nav ne takarja a szekciócímet horgonyra ugráskor */
+section[id] { scroll-margin-top: 64px; }
+
+@media (max-width: 760px) {
+    section[id] { scroll-margin-top: 96px; }
+}
 
 .section-title {
     font-size: clamp(1.7rem, 4vw, 2.4rem);

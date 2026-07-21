@@ -156,7 +156,7 @@ export default function Home() {
           <h2 className="section-title">A csónak</h2>
           <div className="boat-stats">
             <div className="stat">
-              <h3>4</h3>
+              <h3>5</h3>
               <p>utas fér be egyszerre</p>
             </div>
             <div className="stat">
