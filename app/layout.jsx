@@ -21,6 +21,9 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "kuEiNVPw8aVVQ3PJJsldQ1_PbKWmEAnrg77t-5-osac",
+  },
   openGraph: {
     title: "Nomád Bárka – Motorcsónak taxi a Dunakanyarban",
     description:
