@@ -1,3 +1,5 @@
+import { TrackedLink, SectionTracker } from "./components/tracking";
+
 // ====== KÖNNYEN SZERKESZTHETŐ ADATOK ======
 const PHONE = "+36 30 199 2717";
 const PHONE_LINK = "tel:+36301992717";
@@ -36,6 +38,7 @@ const DESTINATIONS = [
 export default function Home() {
   return (
     <main>
+      <SectionTracker sections={["arak", "hogyan", "celpontok", "tudnivalok", "kontakt"]} />
       <nav className="nav">
         <div className="nav-inner">
           <a href="#" className="nav-logo">
@@ -45,9 +48,14 @@ export default function Home() {
             <a href="#arak">Árak</a>
             <a href="#celpontok">Célpontok</a>
             <a href="#tudnivalok">Tudnivalók</a>
-            <a href={PHONE_LINK} className="nav-phone">
+            <TrackedLink
+              href={PHONE_LINK}
+              className="nav-phone"
+              event="hivas_kattintas"
+              data={{ forras: "menu" }}
+            >
               {PHONE}
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </nav>
@@ -69,20 +77,34 @@ export default function Home() {
         <div className="hero-content">
           <h1>
             BÁR<span>KA</span>
+            <span className="sr-only"> – motorcsónak taxi a Dunakanyarban</span>
           </h1>
           <p className="tagline">A bárka, ami a Bárhoz visz.</p>
           <p className="sub">
-            Hajótaxi a <a href="https://nomadbar.hu" style={{ color: "inherit", textDecoration: "underline" }}>Nomád Bárhoz</a> és
-            a Dunakanyar legjobb strandjaira, büféibe és falvaiba. Bringát is viszünk!
+            Motorcsónak taxi (hajótaxi) a{" "}
+            <TrackedLink
+              href="https://nomadbar.hu"
+              style={{ color: "inherit", textDecoration: "underline" }}
+              event="nomadbar_kattintas"
+              data={{ forras: "hero" }}
+            >
+              Nomád Bárhoz
+            </TrackedLink>{" "}
+            és a Dunakanyar legjobb strandjaira, büféibe és falvaiba. Bringát is viszünk!
           </p>
           <div className="hero-cta">
-            <a href={PHONE_LINK} className="btn btn-primary">
+            <TrackedLink
+              href={PHONE_LINK}
+              className="btn btn-primary"
+              event="hivas_kattintas"
+              data={{ forras: "hero" }}
+            >
               <span aria-hidden="true">📞</span>
               {PHONE}
-            </a>
-            <a href="#arak" className="btn btn-ghost">
+            </TrackedLink>
+            <TrackedLink href="#arak" className="btn btn-ghost" event="arak_gomb_kattintas">
               Árak megnézése
-            </a>
+            </TrackedLink>
           </div>
           <div className="hero-badge">
             ⛵ Május 1. – szeptember 30. · minden nap 9:00–22:00 · hajózható időben
@@ -100,7 +122,7 @@ export default function Home() {
         <div className="container">
           <h2 className="section-title">Árak</h2>
           <p className="section-lead">
-            Az árak egy főre, egy irányba értendők.
+            Vízitaxi-árak a Dunakanyarban – egy főre, egy irányba értendők.
           </p>
           <div className="price-grid">
             {PRICES.map((p) => (
@@ -136,8 +158,11 @@ export default function Home() {
               <div className="num">1</div>
               <h3>Hívj fel</h3>
               <p>
-                Csörögj rá a <a href={PHONE_LINK}>{PHONE}</a> számra, és mondd meg, hova mennél és
-                hányan vagytok.
+                Csörögj rá a{" "}
+                <TrackedLink href={PHONE_LINK} event="hivas_kattintas" data={{ forras: "hogyan" }}>
+                  {PHONE}
+                </TrackedLink>{" "}
+                számra, és mondd meg, hova mennél és hányan vagytok.
               </p>
             </div>
             <div className="how-card">
@@ -219,9 +244,14 @@ export default function Home() {
       <section className="contact" id="kontakt">
         <div className="container">
           <h2 className="section-title">Kontakt</h2>
-          <a href={PHONE_LINK} className="phone-big">
+          <TrackedLink
+            href={PHONE_LINK}
+            className="phone-big"
+            event="hivas_kattintas"
+            data={{ forras: "kontakt" }}
+          >
             {PHONE}
-          </a>
+          </TrackedLink>
           <p className="hours">Május 1. – szeptember 30. · minden nap 9:00–22:00</p>
         </div>
       </section>
@@ -229,12 +259,14 @@ export default function Home() {
       <footer>
         <div className="container">
           <div className="foot-logo">BÁRKA</div>
-          <p>Hajótaxi a Dunakanyarban.</p>
+          <p>Nomád Bárka – motorcsónak taxi a Dunakanyarban.</p>
           <p style={{ marginTop: 10 }}>
-            <a href="https://nomadbar.hu">nomadbar.hu</a> ·{" "}
-            <a href="https://neunex.hu">Weboldal: NeuNex</a>
+            <TrackedLink href="https://nomadbar.hu" event="nomadbar_kattintas" data={{ forras: "footer" }}>
+              nomadbar.hu
+            </TrackedLink>{" "}
+            · <a href="https://neunex.hu">Weboldal: NeuNex</a>
           </p>
-          <p style={{ marginTop: 10, opacity: 0.6 }}>© {new Date().getFullYear()} Bárka</p>
+          <p style={{ marginTop: 10, opacity: 0.6 }}>© {new Date().getFullYear()} Nomád Bárka</p>
         </div>
       </footer>
     </main>

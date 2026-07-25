@@ -1,13 +1,17 @@
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
   metadataBase: new URL("https://nomadbarka.hu"),
-  title: "Bárka – Hajótaxi a Dunakanyarban | Nomád Bár, Nagymaros",
+  title: "Nomád Bárka – Motorcsónak taxi a Dunakanyarban | Nagymaros, Visegrád",
   description:
-    "Bárka hajótaxi a Dunakanyarban: motorcsónakkal a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk.",
+    "Nomád Bárka: motorcsónak taxi (hajótaxi) a Dunakanyarban. Vízitaxi a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Hívj: +36 30 199 2717.",
   keywords: [
+    "motorcsónak taxi Dunakanyar",
+    "vízitaxi Dunakanyar",
     "hajótaxi Dunakanyar",
+    "vízitaxi Visegrád",
     "vízitaxi Nagymaros",
     "motorcsónak Kisoroszi",
     "Nomád Bár hajó",
@@ -18,37 +22,42 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Bárka – Hajótaxi a Dunakanyarban",
+    title: "Nomád Bárka – Motorcsónak taxi a Dunakanyarban",
     description:
       "Motorcsónakkal a Dunakanyar legjobb helyeire. Bringát is viszünk.",
     url: "/",
     locale: "hu_HU",
     type: "website",
-    siteName: "Bárka",
+    siteName: "Nomád Bárka",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "A Bárka motorcsónak a Dunán, a Dunakanyarban",
+        alt: "A Nomád Bárka motorcsónak a Dunán, a Dunakanyarban",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bárka – Hajótaxi a Dunakanyarban",
+    title: "Nomád Bárka – Motorcsónak taxi a Dunakanyarban",
     description:
       "Motorcsónakkal a Dunakanyar legjobb helyeire. Bringát is viszünk.",
     images: ["/og-image.jpg"],
   },
 };
 
+export const viewport = {
+  themeColor: "#10425a",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Bárka – Hajótaxi a Dunakanyarban",
+  "@type": ["LocalBusiness", "TaxiService"],
+  name: "Nomád Bárka – Motorcsónak taxi a Dunakanyarban",
+  alternateName: "Bárka",
   description:
-    "Hajótaxi a Dunakanyarban: motorcsónakkal a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Szezon: május 1. – szeptember 30., minden nap 9:00–22:00, hajózható időben.",
+    "Motorcsónak taxi (vízitaxi) a Dunakanyarban: a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Szezon: május 1. – szeptember 30., minden nap 9:00–22:00, hajózható időben.",
   url: "https://nomadbarka.hu",
   telephone: "+36301992717",
   image: "https://nomadbarka.hu/og-image.jpg",
@@ -59,6 +68,26 @@ const jsonLd = {
     addressCountry: "HU",
   },
   areaServed: ["Nagymaros", "Visegrád", "Kismaros", "Kisoroszi", "Dunakanyar"],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      name: "Átkelés: Kismaros, Nagymaros vagy Visegrád",
+      price: "3500",
+      priceCurrency: "HUF",
+    },
+    {
+      "@type": "Offer",
+      name: "Átkelés: Kisoroszi-szigetcsúcs",
+      price: "3000",
+      priceCurrency: "HUF",
+    },
+    {
+      "@type": "Offer",
+      name: "Egyéni útvonal (30 perc)",
+      price: "26000",
+      priceCurrency: "HUF",
+    },
+  ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: [
@@ -86,6 +115,7 @@ export default function RootLayout({ children }) {
         />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
