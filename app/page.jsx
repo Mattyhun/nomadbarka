@@ -4,6 +4,10 @@ import { TrackedLink, SectionTracker } from "./components/tracking";
 const PHONE = "+36 30 199 2717";
 const PHONE_LINK = "tel:+36301992717";
 
+// Figyelemfelhívó sáv az oldal tetején, amíg nem jár a komp.
+// Kapcsold false-ra, ha a komp újra jár:
+const KOMP_SAV = true;
+
 const PRICES = [
   { dest: "Kismaros", price: "3 500 Ft" },
   { dest: "Nagymaros", price: "3 500 Ft" },
@@ -39,6 +43,17 @@ export default function Home() {
   return (
     <main>
       <SectionTracker sections={["arak", "hogyan", "celpontok", "tudnivalok", "kontakt"]} />
+      {KOMP_SAV && (
+        <TrackedLink
+          href={PHONE_LINK}
+          className="notice-bar"
+          event="hivas_kattintas"
+          data={{ forras: "komp-sav" }}
+        >
+          <strong>⛴️ Nem jár a komp Nagymaros és Visegrád között?</strong> Átviszünk
+          motorcsónakkal pár perc alatt – hívj: <span className="notice-phone">{PHONE}</span>
+        </TrackedLink>
+      )}
       <nav className="nav">
         <div className="nav-inner">
           <a href="#" className="nav-logo">
