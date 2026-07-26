@@ -2,11 +2,29 @@
 
 import { useEffect } from "react";
 import { track } from "@vercel/analytics";
+import { GOOGLE_ADS_ID, CALL_CONVERSION_LABEL } from "../google-ads";
 
-// Link, ami kattintáskor Vercel Analytics eseményt küld.
+// Hívás-kattintáskor Google Ads konverziót jelent, ha be van állítva a
+// konverziós azonosító és címke (app/google-ads.js).
+function reportCallConversion() {
+  if (!GOOGLE_ADS_ID || !CALL_CONVERSION_LABEL) return;
+  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  window.gtag("event", "conversion", {
+    send_to: `${GOOGLE_ADS_ID}/${CALL_CONVERSION_LABEL}`,
+  });
+}
+
+// Link, ami kattintáskor Vercel Analytics eseményt küld,
+// híváskattintásnál Google Ads konverziót is.
 export function TrackedLink({ event, data, children, ...rest }) {
   return (
-    <a {...rest} onClick={() => track(event, data)}>
+    <a
+      {...rest}
+      onClick={() => {
+        track(event, data);
+        if (event === "hivas_kattintas") reportCallConversion();
+      }}
+    >
       {children}
     </a>
   );
