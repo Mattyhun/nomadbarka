@@ -6,5 +6,5 @@
 //
 // Az AW-val kezdődő rész az azonosító, a perjel utáni rész a címke (label).
 
-export const GOOGLE_ADS_ID = ""; // pl. "AW-123456789"
-export const CALL_CONVERSION_LABEL = ""; // pl. "AbC-dEfGhIjKlMnOp"
+export const GOOGLE_ADS_ID = "AW-18342862622";
+export const CALL_CONVERSION_LABEL = "wdNaCPiw4tYcEJ6-x6pE";
