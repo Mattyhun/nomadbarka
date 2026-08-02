@@ -1,8 +1,8 @@
 import { TrackedLink, SectionTracker } from "./components/tracking";
 
 // ====== KÖNNYEN SZERKESZTHETŐ ADATOK ======
-const PHONE = "+36 30 199 2717";
-const PHONE_LINK = "tel:+36301992717";
+const PHONE = "+36 20 611 9500";
+const PHONE_LINK = "tel:+36206119500";
 
 // Figyelemfelhívó sáv az oldal tetején, amíg nem jár a komp.
 // Kapcsold false-ra, ha a komp újra jár:

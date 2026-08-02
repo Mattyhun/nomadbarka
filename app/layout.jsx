@@ -8,7 +8,7 @@ export const metadata = {
   metadataBase: new URL("https://nomadbarka.hu"),
   title: "Nomád Bárka – Motorcsónak taxi a Dunakanyarban | Nagymaros, Visegrád",
   description:
-    "Nomád Bárka: motorcsónak taxi (hajótaxi) a Dunakanyarban. Vízitaxi a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Hívj: +36 30 199 2717.",
+    "Nomád Bárka: motorcsónak taxi (hajótaxi) a Dunakanyarban. Vízitaxi a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Hívj: +36 20 611 9500.",
   keywords: [
     "motorcsónak taxi Dunakanyar",
     "vízitaxi Dunakanyar",
@@ -64,7 +64,7 @@ const jsonLd = {
   description:
     "Motorcsónak taxi (vízitaxi) a Dunakanyarban: a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Szezon: május 1. – szeptember 30., minden nap 9:00–22:00, hajózható időben.",
   url: "https://nomadbarka.hu",
-  telephone: "+36301992717",
+  telephone: "+36206119500",
   image: "https://nomadbarka.hu/og-image.jpg",
   priceRange: "3 000–26 000 Ft",
   address: {
