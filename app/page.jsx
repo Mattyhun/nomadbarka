@@ -1,8 +1,12 @@
 import { TrackedLink, SectionTracker } from "./components/tracking";
+import { getPhone } from "./phone";
+
+// Óránként újragenerálódik az oldal, így a telefonszám-ütemezés (app/phone.js)
+// magától átvált a határnapokon.
+export const revalidate = 3600;
 
 // ====== KÖNNYEN SZERKESZTHETŐ ADATOK ======
-const PHONE = "+36 20 611 9500";
-const PHONE_LINK = "tel:+36206119500";
+// A telefonszám az app/phone.js-ben van, mert dátum szerint változik.
 
 // Figyelemfelhívó sáv az oldal tetején, amíg nem jár a komp.
 // Kapcsold false-ra, ha a komp újra jár:
@@ -40,6 +44,7 @@ const DESTINATIONS = [
 
 // ====== OLDAL ======
 export default function Home() {
+  const { display: PHONE, href: PHONE_LINK } = getPhone();
   return (
     <main>
       <SectionTracker sections={["arak", "hogyan", "celpontok", "tudnivalok", "kontakt"]} />

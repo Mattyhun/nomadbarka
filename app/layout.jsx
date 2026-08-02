@@ -3,12 +3,15 @@ import Script from "next/script";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { GOOGLE_ADS_ID } from "./google-ads";
+import { getPhone } from "./phone";
 
-export const metadata = {
+// Függvényként, hogy a telefonszám-ütemezés (app/phone.js) renderenként
+// érvényesüljön, ne fagyjon be a build idejére.
+export const generateMetadata = () => ({
   metadataBase: new URL("https://nomadbarka.hu"),
   title: "Nomád Bárka – Motorcsónak taxi a Dunakanyarban | Nagymaros, Visegrád",
   description:
-    "Nomád Bárka: motorcsónak taxi (hajótaxi) a Dunakanyarban. Vízitaxi a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Hívj: +36 20 611 9500.",
+    `Nomád Bárka: motorcsónak taxi (hajótaxi) a Dunakanyarban. Vízitaxi a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Hívj: ${getPhone().display}.`,
   keywords: [
     "motorcsónak taxi Dunakanyar",
     "vízitaxi Dunakanyar",
@@ -50,13 +53,13 @@ export const metadata = {
       "Motorcsónakkal a Dunakanyar legjobb helyeire. Bringát is viszünk.",
     images: ["/og-image.jpg"],
   },
-};
+});
 
 export const viewport = {
   themeColor: "#10425a",
 };
 
-const jsonLd = {
+const jsonLd = () => ({
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "TaxiService"],
   name: "Nomád Bárka – Motorcsónak taxi a Dunakanyarban",
@@ -64,7 +67,7 @@ const jsonLd = {
   description:
     "Motorcsónak taxi (vízitaxi) a Dunakanyarban: a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Szezon: május 1. – szeptember 30., minden nap 9:00–22:00, hajózható időben.",
   url: "https://nomadbarka.hu",
-  telephone: "+36206119500",
+  telephone: getPhone().href.replace("tel:", ""),
   image: "https://nomadbarka.hu/og-image.jpg",
   priceRange: "3 000–26 000 Ft",
   address: {
@@ -108,7 +111,7 @@ const jsonLd = {
     closes: "22:00",
   },
   sameAs: ["https://nomadbar.hu"],
-};
+});
 
 export default function RootLayout({ children }) {
   return (
@@ -116,7 +119,7 @@ export default function RootLayout({ children }) {
       <body>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()) }}
         />
         {children}
         {GOOGLE_ADS_ID && (
