@@ -154,6 +154,10 @@ export default function Home() {
           </div>
           <div className="price-notes">
             <div className="note-card">
+              <strong>5 000 Ft</strong>
+              egyedül utazó felnőtt esetén – bármelyik célpontra
+            </div>
+            <div className="note-card">
               <strong>+1 000 Ft</strong>
               bringánként – a kerékpárodat is átvisszük
             </div>
