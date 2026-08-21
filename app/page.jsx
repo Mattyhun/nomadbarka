@@ -13,9 +13,9 @@ export const revalidate = 3600;
 const KOMP_SAV = true;
 
 const PRICES = [
-  { dest: "Kismaros", price: "3 500 Ft" },
-  { dest: "Nagymaros", price: "3 500 Ft" },
-  { dest: "Visegrád", price: "3 500 Ft" },
+  { dest: "Kismaros", price: "3 000 Ft" },
+  { dest: "Nagymaros", price: "3 000 Ft" },
+  { dest: "Visegrád", price: "3 000 Ft" },
   { dest: "Kisoroszi-szigetcsúcs", price: "3 000 Ft" },
 ];
 
@@ -27,17 +27,17 @@ const DESTINATIONS = [
   },
   {
     name: "Kismaros homokzátony",
-    price: "3 500 Ft/fő",
+    price: "3 000 Ft/fő",
     desc: "A legfinomabb homokos szabad strand a környéken! Ideális gyerekekkel, mert nagyon lassan mélyül a víz és a sodrás is gyenge. Csak vízen keresztül közelíthető meg – pont ezért visz oda a Bárka.",
   },
   {
     name: "Nagymaros strand",
-    price: "3 500 Ft/fő",
+    price: "3 000 Ft/fő",
     desc: "A Dunakanyar legjobb hekkje a sarki büfében, házi sütik és kézműves sörök a Piknik Manufaktúrában. Homokos strand, vadonatúj játszótér a kicsiknek.",
   },
   {
     name: "Visegrád",
-    price: "3 500 Ft/fő",
+    price: "3 000 Ft/fő",
     desc: "Vár, panoráma, bob – a Dunakanyar klasszikusa. A Bárkával a komp menetrendjétől függetlenül, pár perc alatt átérsz.",
   },
 ];
@@ -142,7 +142,8 @@ export default function Home() {
         <div className="container">
           <h2 className="section-title">Árak</h2>
           <p className="section-lead">
-            Vízitaxi-árak a Dunakanyarban – egy főre, egy irányba értendők.
+            Vízitaxi-árak a Dunakanyarban – egy főre, egy irányba értendők, két vagy több
+            utas esetén.
           </p>
           <div className="price-grid">
             {PRICES.map((p) => (
@@ -164,6 +165,10 @@ export default function Home() {
             <div className="note-card">
               <strong>26 000 Ft / 30 perc</strong>
               egyéni útvonal – te mondod, merre menjünk
+            </div>
+            <div className="note-card">
+              <strong>40 000 Ft / 1 óra</strong>
+              túra / egyéni útvonal – egy teljes órán át a Dunakanyarban
             </div>
             <div className="note-card">
               <strong>5 fő</strong>

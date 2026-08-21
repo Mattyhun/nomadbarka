@@ -69,7 +69,7 @@ const jsonLd = () => ({
   url: "https://nomadbarka.hu",
   telephone: getPhone().href.replace("tel:", ""),
   image: "https://nomadbarka.hu/og-image.jpg",
-  priceRange: "3 000–26 000 Ft",
+  priceRange: "3 000–40 000 Ft",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Nagymaros",
@@ -79,20 +79,26 @@ const jsonLd = () => ({
   makesOffer: [
     {
       "@type": "Offer",
-      name: "Átkelés: Kismaros, Nagymaros vagy Visegrád",
-      price: "3500",
+      name: "Átkelés bármelyik célpontra (fejenként, 2+ utas esetén)",
+      price: "3000",
       priceCurrency: "HUF",
     },
     {
       "@type": "Offer",
-      name: "Átkelés: Kisoroszi-szigetcsúcs",
-      price: "3000",
+      name: "Egyedül utazó felnőtt (egy fuvar)",
+      price: "5000",
       priceCurrency: "HUF",
     },
     {
       "@type": "Offer",
       name: "Egyéni útvonal (30 perc)",
       price: "26000",
+      priceCurrency: "HUF",
+    },
+    {
+      "@type": "Offer",
+      name: "Túra / egyéni útvonal (1 óra)",
+      price: "40000",
       priceCurrency: "HUF",
     },
   ],
