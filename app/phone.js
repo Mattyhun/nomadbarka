@@ -1,7 +1,7 @@
 // ====== TELEFONSZÁM ======
 // Itt lehet cserélni a weboldalon mindenhol megjelenő telefonszámot.
 
-const SAJAT = { display: "+36 30 199 2717", href: "tel:+36301992717" };
+const SAJAT = { display: "+36 20 611 9500", href: "tel:+36206119500" };
 
 export function getPhone() {
   return SAJAT;
