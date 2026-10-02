@@ -127,7 +127,7 @@ export default function Home() {
             </TrackedLink>
           </div>
           <div className="hero-badge">
-            ⛵ Május 1. – szeptember 30. · minden nap 9:00–22:00 · hajózható időben
+            ⛵ Május 1. – október 31. · minden nap 9:00–22:00 · hajózható időben
           </div>
         </div>
         <svg className="waves" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -255,8 +255,8 @@ export default function Home() {
               szervize és tárolása.
             </p>
             <p>
-              A program <strong>időjárásfüggő</strong>: hajózható idő esetén május 1. és szeptember
-              30. között minden nap 9:00 és 22:00 óra között elérhető.
+              A program <strong>időjárásfüggő</strong>: hajózható idő esetén május 1. és október
+              31. között minden nap 9:00 és 22:00 óra között elérhető.
             </p>
             <p>
               Az úton mindenki a <strong>saját felelősségére</strong> vesz részt. A hajó a Hajózási
@@ -281,7 +281,7 @@ export default function Home() {
           >
             {PHONE}
           </TrackedLink>
-          <p className="hours">Május 1. – szeptember 30. · minden nap 9:00–22:00</p>
+          <p className="hours">Május 1. – október 31. · minden nap 9:00–22:00</p>
         </div>
       </section>
 

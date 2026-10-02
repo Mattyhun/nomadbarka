@@ -65,7 +65,7 @@ const jsonLd = () => ({
   name: "Nomád Bárka – Motorcsónak taxi a Dunakanyarban",
   alternateName: "Bárka",
   description:
-    "Motorcsónak taxi (vízitaxi) a Dunakanyarban: a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Szezon: május 1. – szeptember 30., minden nap 9:00–22:00, hajózható időben.",
+    "Motorcsónak taxi (vízitaxi) a Dunakanyarban: a Kisoroszi-szigetcsúcs, Visegrád, Kismaros és Nagymaros felé. Bringát is viszünk. Szezon: május 1. – október 31., minden nap 9:00–22:00, hajózható időben.",
   url: "https://nomadbarka.hu",
   telephone: getPhone().href.replace("tel:", ""),
   image: "https://nomadbarka.hu/og-image.jpg",
